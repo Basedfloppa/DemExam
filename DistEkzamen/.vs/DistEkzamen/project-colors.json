@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1524800a-2f7f-430a-ac53-73de0bedad2c": {
+      "ProjectGuid": "1524800a-2f7f-430a-ac53-73de0bedad2c",
+      "DisplayName": "Coffe_test",
+      "ColorIndex": 0
+    },
+    "347e65d6-c5bd-425d-843d-efc8e34a7c17": {
+      "ProjectGuid": "347e65d6-c5bd-425d-843d-efc8e34a7c17",
+      "DisplayName": "DistEkzamen_test",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
