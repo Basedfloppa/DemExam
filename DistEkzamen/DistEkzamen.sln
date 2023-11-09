@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistEkzamen_test", "DistEkzamen_test\DistEkzamen_test.csproj", "{347E65D6-C5BD-425D-843D-EFC8E34A7C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coffe_test", "Coffe_test\Coffe_test.csproj", "{1524800A-2F7F-430A-AC53-73DE0BEDAD2C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{347E65D6-C5BD-425D-843D-EFC8E34A7C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{347E65D6-C5BD-425D-843D-EFC8E34A7C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{347E65D6-C5BD-425D-843D-EFC8E34A7C17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1524800A-2F7F-430A-AC53-73DE0BEDAD2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1524800A-2F7F-430A-AC53-73DE0BEDAD2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1524800A-2F7F-430A-AC53-73DE0BEDAD2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1524800A-2F7F-430A-AC53-73DE0BEDAD2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
