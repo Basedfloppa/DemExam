@@ -98,12 +98,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStaff.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddStaff.Designer.cs">
-      <DependentUpon>AddStaff.cs</DependentUpon>
-    </Compile>
     <Compile Include="DB_class.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -131,9 +125,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddStaff.resx">
-      <DependentUpon>AddStaff.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>

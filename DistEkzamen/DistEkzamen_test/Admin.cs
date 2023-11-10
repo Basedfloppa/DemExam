@@ -31,8 +31,6 @@ namespace DistEkzamen_test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddStaff formAdd = new AddStaff();
-            formAdd.Show();
         }
 
         private void Admin_Load(object sender, EventArgs e)
