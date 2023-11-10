@@ -34,5 +34,10 @@ namespace DistEkzamen_test
             AddStaff formAdd = new AddStaff();
             formAdd.Show();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

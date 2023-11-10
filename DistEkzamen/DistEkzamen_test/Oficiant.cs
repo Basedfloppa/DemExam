@@ -16,5 +16,10 @@ namespace DistEkzamen_test
         {
             InitializeComponent();
         }
+
+        private void Oficiant_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

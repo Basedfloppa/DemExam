@@ -24,31 +24,33 @@ namespace DistEkzamen_test
 
                 var command = new NpgsqlCommand();
                 
-                command.CommandText = $"SELECT * FROM restaurant.users WHERE login='{textBox1.Text}' AND password='{textBox2.Text}'";
+                command.CommandText = $"SELECT * FROM users WHERE login='{textBox1.Text}' AND password='{textBox2.Text}'";
                 command.Connection = connection;
                 var user = command.ExecuteReader();
 
-                if (user.Depth == 1)
+                if (user.HasRows)
                 {
-                    command.CommandText = $"SELECT users.orders FROM restaurant.users WHERE login = '{textBox1.Text}' AND password = '{textBox2.Text}'";
-                    if (command.ExecuteReader().Depth == 1)
+                    user.Read();
+                    switch (user[3])
                     {
-                        switch (user[3])
-                        {
-                            case 1:
-                                Admin formAdmin = new Admin();
-                                formAdmin.ShowDialog();
-                                break;
-                            case 2:
-                                Povar formPovar = new Povar();
-                                formPovar.ShowDialog();
-                                break;
-                            case 3:
-                                Oficiant formOficiant = new Oficiant();
-                                formOficiant.ShowDialog();
-                                break;
-                        }
+                        case "admin":
+                            Admin formAdmin = new Admin();
+                            formAdmin.Show();
+                            this.Hide();
+                            break;
+                        case "cook":
+                            Povar formPovar = new Povar();
+                            formPovar.Show();
+                            this.Hide();
+                            break;
+                        case "waiter":
+                            Oficiant formOficiant = new Oficiant();
+                            formOficiant.Show();
+                            this.Hide();
+                            break;
                     }
+
+                    user.Close();
                     connection.Close();
                 }
             }

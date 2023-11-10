@@ -60,13 +60,13 @@
             // принятыеToolStripMenuItem
             // 
             this.принятыеToolStripMenuItem.Name = "принятыеToolStripMenuItem";
-            this.принятыеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.принятыеToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.принятыеToolStripMenuItem.Text = "Создать";
             // 
             // списоеToolStripMenuItem
             // 
             this.списоеToolStripMenuItem.Name = "списоеToolStripMenuItem";
-            this.списоеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.списоеToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.списоеToolStripMenuItem.Text = "Список";
             // 
             // contextMenuStrip1
@@ -84,6 +84,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Oficiant";
             this.Text = "Oficiant";
+            this.Load += new System.EventHandler(this.Oficiant_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
