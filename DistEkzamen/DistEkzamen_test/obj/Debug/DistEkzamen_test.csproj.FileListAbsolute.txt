@@ -90,7 +90,6 @@ C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\bin\Debug\Sy
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\bin\Debug\System.ValueTuple.xml
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\obj\Debug\DistEkzamen_test.csproj.AssemblyReference.cache
-C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\obj\Debug\DistEkzamen_test.AddStaff.resources
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\obj\Debug\DistEkzamen_test.Admin.resources
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\obj\Debug\DistEkzamen_test.Form1.resources
 C:\Users\user\Documents\GitHub\DemExam\DistEkzamen\DistEkzamen_test\obj\Debug\DistEkzamen_test.Oficiant.resources

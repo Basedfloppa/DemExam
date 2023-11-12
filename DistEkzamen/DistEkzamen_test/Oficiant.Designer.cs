@@ -40,9 +40,10 @@
             this.state = new System.Windows.Forms.ComboBox();
             this.description = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_change = new System.Windows.Forms.Button();
             this.state_change = new System.Windows.Forms.ComboBox();
             this.row_change = new System.Windows.Forms.ComboBox();
+            this.button_change_save = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -108,10 +109,11 @@
             // 
             this.create.Location = new System.Drawing.Point(531, 280);
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(75, 23);
+            this.create.Size = new System.Drawing.Size(93, 23);
             this.create.TabIndex = 4;
             this.create.Text = "Создать";
             this.create.UseVisualStyleBackColor = true;
+            this.create.Click += new System.EventHandler(this.create_Click);
             // 
             // state
             // 
@@ -138,14 +140,15 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Состояние";
             // 
-            // button1
+            // button_change
             // 
-            this.button1.Location = new System.Drawing.Point(667, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "изменить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_change.Location = new System.Drawing.Point(531, 309);
+            this.button_change.Name = "button_change";
+            this.button_change.Size = new System.Drawing.Size(93, 23);
+            this.button_change.TabIndex = 8;
+            this.button_change.Text = "Изменить";
+            this.button_change.UseVisualStyleBackColor = true;
+            this.button_change.Click += new System.EventHandler(this.button_change_Click);
             // 
             // state_change
             // 
@@ -163,14 +166,25 @@
             this.row_change.Size = new System.Drawing.Size(121, 24);
             this.row_change.TabIndex = 10;
             // 
+            // button_change_save
+            // 
+            this.button_change_save.Location = new System.Drawing.Point(667, 280);
+            this.button_change_save.Name = "button_change_save";
+            this.button_change_save.Size = new System.Drawing.Size(121, 23);
+            this.button_change_save.TabIndex = 11;
+            this.button_change_save.Text = "Сохранить";
+            this.button_change_save.UseVisualStyleBackColor = true;
+            this.button_change_save.Click += new System.EventHandler(this.button_change_save_Click);
+            // 
             // Oficiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_change_save);
             this.Controls.Add(this.row_change);
             this.Controls.Add(this.state_change);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_change);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.description);
             this.Controls.Add(this.state);
@@ -181,6 +195,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Oficiant";
             this.Text = "Oficiant";
+            this.Load += new System.EventHandler(this.Oficiant_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -202,8 +217,9 @@
         private System.Windows.Forms.ComboBox state;
         private System.Windows.Forms.RichTextBox description;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_change;
         private System.Windows.Forms.ComboBox state_change;
         private System.Windows.Forms.ComboBox row_change;
+        private System.Windows.Forms.Button button_change_save;
     }
 }
