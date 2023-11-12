@@ -25,8 +25,7 @@ namespace DistEkzamen_test
         private void списокToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
-            button1.Visible = true;
-            button2.Visible = true;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
