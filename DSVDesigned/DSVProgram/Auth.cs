@@ -23,18 +23,36 @@ namespace DSVProgram
         {
             Login = "Admin";
             Password = "Admin";
-            tbAuthor.Text = Login;
-            tbBook.Text = Password;
+            textBoxLogin.Text = Login;
+            textBoxPass.Text = Password;
+            labelInv.Visible = false;
         }
 
-        private void btOK_Click(object sender, EventArgs e)
+        private void btnSignin_Click(object sender, EventArgs e)
         {
-            Login = tbAuthor.Text;
-            Password = tbBook.Text;
+            Login = textBoxLogin.Text;
+            Password = textBoxPass.Text;
 
-            Maintain addData = new Maintain();
-            addData.Show();
-            this.Hide();
+            if (Login == "" || Password == "")
+            {
+                labelInv.Visible = true;
+            }
+            else
+            {
+                Maintain addData = new Maintain();
+                addData.Show();
+                this.Hide();
+            }
+        }
+
+        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+            labelInv.Visible = false;
+        }
+
+        private void textBoxPass_TextChanged(object sender, EventArgs e)
+        {
+            labelInv.Visible = false;
         }
     }
 }
