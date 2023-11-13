@@ -1,8 +1,5 @@
-﻿//COPYRIGHT 
-
-using System;
+﻿using System;
 using System.Windows.Forms;
-
 using System.Data.SQLite;
 using System.IO;
 using System.Data;
@@ -84,11 +81,11 @@ namespace DSVProgram{
 
                 if (DBTable.Rows.Count > 0)
                 {
-                    dgvViewer.Rows.Clear();
+                    DIAGViewer.Rows.Clear();
 
                     for (int i = 0; i < DBTable.Rows.Count; i++)
                     {
-                        dgvViewer.Rows.Add(DBTable.Rows[i].ItemArray);
+                        DIAGViewer.Rows.Add(DBTable.Rows[i].ItemArray);
                     }
                 }
                 else MessageBox.Show("База данных пуста");
@@ -150,7 +147,7 @@ namespace DSVProgram{
 
         private void btClearTable_Click(object sender, EventArgs e)
         {
-            dgvViewer.Rows.Clear();
+            DIAGViewer.Rows.Clear();
         }
     }
 }
