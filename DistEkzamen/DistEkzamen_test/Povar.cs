@@ -17,11 +17,6 @@ namespace DistEkzamen_test
 
         private void Povar_Load(object sender, EventArgs e)
         {
-            this.state.DataSource = states;
-            this.state.Visible = false;
-            this.row.Visible = false;
-            this.change_state_button.Visible = false;
-
             using (var connection = new NpgsqlConnection(config.connection))
             {
                 connection.Open();
@@ -37,31 +32,35 @@ namespace DistEkzamen_test
                 connection.Close();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Povar_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var list = new List<string> { };
-            var count = this.dataGridView1.Rows.Count - 1;
-            while (count > 0)
+            using (var connection = new NpgsqlConnection(config.connection))
             {
-                list.Add(count.ToString());
-                count--;
+                connection.Open();
+
+                string status = "";
+                string description = "";
+                string id = "";
+
+                var command = new NpgsqlCommand();
+                command.Connection = connection;
+
+                foreach (DataGridViewRow row in this.dataGridView1.Rows)
+                {
+                    if (row.Cells[0].Value == null) break;
+                    
+                    status = row.Cells[0].Value.ToString();
+                    description = row.Cells[1].Value.ToString();
+                    id = row.Cells[2].Value.ToString();
+
+                    command.CommandText = $"INSERT INTO orders(id,status,description) VALUES({id},'{status}','{description}') ON CONFLICT (id) DO UPDATE SET id = {id}, status = '{status}', description = '{description}';";
+
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
             }
-
-            row.DataSource = list;
-
-            this.state.Visible = true;
-            this.row.Visible = true;
-            this.change_state_button.Visible = true;
-        }
-        private void change_state_button_Click(object sender, EventArgs e)
-        {
-            this.state.Visible = false;
-            this.row.Visible = false;
-            this.change_state_button.Visible = false;
-
-            dt.Rows[Convert.ToInt32(row.SelectedItem) - 1][1] = state.Text;
-            this.dataGridView1.DataSource = dt;
-            this.dataGridView1.Update();
+            Environment.Exit(0);
         }
     }
 }
