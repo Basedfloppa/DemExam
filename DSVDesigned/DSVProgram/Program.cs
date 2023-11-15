@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Copyright (c) PEPE POPO, OISP-1-120
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,7 +21,9 @@ namespace DSVProgram
 
             if (AuthForm.SuccessfullyAuth)
             {
-                Application.Run(new Maintain());
+                if (AuthForm.SUCCESS_ADMIN) Application.Run(new Admin());
+                else if (AuthForm.SUCCESS_EMPLOYEE) Application.Run(new Employee());
+                else if (AuthForm.SUCCESS_WAITER) Application.Run(new Waiter());
             }
         }
     }

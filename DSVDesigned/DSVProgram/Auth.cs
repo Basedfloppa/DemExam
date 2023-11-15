@@ -1,4 +1,4 @@
-﻿//
+﻿// Copyright (c) PEPE POPO, OISP-1-120
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +20,9 @@ namespace DSVProgram
         }
 
         public bool SuccessfullyAuth = false;
+        public bool SUCCESS_ADMIN = false;
+        public bool SUCCESS_EMPLOYEE = false;
+        public bool SUCCESS_WAITER = false;
 
         private void Auth_Load(object sender, EventArgs e)
         {
@@ -36,12 +39,17 @@ namespace DSVProgram
             }
             else
             {
-                string AuthQUERY = "SELECT * FROM UserPass WHERE Login = @Login AND Password = @Password";
-                SQLiteConnection AuthCONNECTION = new SQLiteConnection("Data Source=C:\\Users\\Alexander\\Desktop\\DemExam\\DSVDesigned\\DSVProgram\\DSVBD.db; Version=3;");
+                string UniqueTypeEmployee = "ADMIN";
+                string AuthQUERY = "SELECT * FROM AuthUser WHERE Login = @Login AND Password = @Password";
+                string EmployeeQUERY = "INSERT * INTO AuthUser(Empl) VALUES (@Empl)";
+                SQLiteConnection AuthCONNECTION = new SQLiteConnection("Data Source=DSVBD.db; Version=3;");
+                SQLiteCommand AuthCOMMAND = new SQLiteCommand(AuthCONNECTION);
                 AuthCONNECTION.Open();
-                SQLiteCommand AuthCOMMAND = new SQLiteCommand(AuthQUERY, AuthCONNECTION);
+
+                AuthCOMMAND.CommandText = AuthQUERY;
                 AuthCOMMAND.Parameters.AddWithValue("@Login", textBoxLogin.Text);
                 AuthCOMMAND.Parameters.AddWithValue("@Password", textBoxPass.Text);
+
                 SQLiteDataAdapter AuthADAPTER = new SQLiteDataAdapter(AuthCOMMAND);
                 DataTable AuthDATATABLE = new DataTable();
                 AuthADAPTER.Fill(AuthDATATABLE);
@@ -49,11 +57,16 @@ namespace DSVProgram
                 if (AuthDATATABLE.Rows.Count > 0)
                 {
                     SuccessfullyAuth = true;
+                    if (UniqueTypeEmployee == "ADMIN") SUCCESS_ADMIN = true;
+                    else if (UniqueTypeEmployee == "EMPLOYEE") SUCCESS_EMPLOYEE = true;
+                    else if (UniqueTypeEmployee == "WAITER") SUCCESS_WAITER = true;
+                    this.Close();
+                    AuthCONNECTION.Close();
                 }
                 else
                 {
                     SuccessfullyAuth = false;
-                    MessageBox.Show("Неизвестная ошибка", Text);
+                    labelInv.Visible = true;
                     AuthCONNECTION.Close();
                 }
             }
