@@ -28,38 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maintain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btCreate = new System.Windows.Forms.ToolStripButton();
-            this.btConnect = new System.Windows.Forms.ToolStripButton();
-            this.btReadAll = new System.Windows.Forms.ToolStripButton();
-            this.btAdd = new System.Windows.Forms.ToolStripButton();
-            this.btClearTable = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lbStatusText = new System.Windows.Forms.ToolStripStatusLabel();
             this.DIAGViewer = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Book = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1.SuspendLayout();
+            this.btCreate = new System.Windows.Forms.ToolStripButton();
+            this.btConnect = new System.Windows.Forms.ToolStripButton();
+            this.btReadAll = new System.Windows.Forms.ToolStripButton();
+            this.btAdd = new System.Windows.Forms.ToolStripButton();
+            this.btClearTable = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DIAGViewer)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // statusStrip1
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btCreate,
-            this.btConnect,
-            this.btReadAll,
-            this.btAdd,
-            this.btClearTable});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1264, 26);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbStatusText});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lbStatusText
+            // 
+            this.lbStatusText.Name = "lbStatusText";
+            this.lbStatusText.Size = new System.Drawing.Size(27, 17);
+            this.lbStatusText.Text = "----";
+            // 
+            // DIAGViewer
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DIAGViewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.DIAGViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DIAGViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Author,
+            this.Book});
+            this.DIAGViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DIAGViewer.Location = new System.Drawing.Point(0, 26);
+            this.DIAGViewer.Name = "DIAGViewer";
+            this.DIAGViewer.Size = new System.Drawing.Size(1264, 633);
+            this.DIAGViewer.TabIndex = 2;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
+            // 
+            // Author
+            // 
+            this.Author.HeaderText = "Author";
+            this.Author.Name = "Author";
+            this.Author.Width = 200;
+            // 
+            // Book
+            // 
+            this.Book.HeaderText = "Book";
+            this.Book.Name = "Book";
+            this.Book.Width = 200;
             // 
             // btCreate
             // 
@@ -116,60 +157,19 @@
             this.btClearTable.Text = "Очистить";
             this.btClearTable.Click += new System.EventHandler(this.btClearTable_Click);
             // 
-            // statusStrip1
+            // toolStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbStatusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 659);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lbStatusText
-            // 
-            this.lbStatusText.Name = "lbStatusText";
-            this.lbStatusText.Size = new System.Drawing.Size(27, 17);
-            this.lbStatusText.Text = "----";
-            // 
-            // DIAGViewer
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DIAGViewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.DIAGViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DIAGViewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Author,
-            this.Book});
-            this.DIAGViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DIAGViewer.Location = new System.Drawing.Point(0, 26);
-            this.DIAGViewer.Name = "DIAGViewer";
-            this.DIAGViewer.Size = new System.Drawing.Size(1264, 633);
-            this.DIAGViewer.TabIndex = 2;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Width = 50;
-            // 
-            // Author
-            // 
-            this.Author.HeaderText = "Author";
-            this.Author.Name = "Author";
-            this.Author.Width = 200;
-            // 
-            // Book
-            // 
-            this.Book.HeaderText = "Book";
-            this.Book.Name = "Book";
-            this.Book.Width = 200;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btCreate,
+            this.btConnect,
+            this.btReadAll,
+            this.btAdd,
+            this.btClearTable});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1264, 26);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // Maintain
             // 
@@ -183,30 +183,29 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DSV Program";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DIAGViewer)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btCreate;
-        private System.Windows.Forms.ToolStripButton btConnect;
-        private System.Windows.Forms.ToolStripButton btAdd;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lbStatusText;
         private System.Windows.Forms.DataGridView DIAGViewer;
-        private System.Windows.Forms.ToolStripButton btReadAll;
-        private System.Windows.Forms.ToolStripButton btClearTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Book;
+        private System.Windows.Forms.ToolStripButton btCreate;
+        private System.Windows.Forms.ToolStripButton btConnect;
+        private System.Windows.Forms.ToolStripButton btReadAll;
+        private System.Windows.Forms.ToolStripButton btAdd;
+        private System.Windows.Forms.ToolStripButton btClearTable;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }
 
