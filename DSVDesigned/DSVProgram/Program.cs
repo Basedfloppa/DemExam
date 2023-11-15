@@ -13,7 +13,14 @@ namespace DSVProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Auth());
+
+            Auth AuthForm = new Auth();
+            Application.Run(AuthForm);
+
+            if (AuthForm.SuccessfullyAuth)
+            {
+                Application.Run(new Maintain());
+            }
         }
     }
 }

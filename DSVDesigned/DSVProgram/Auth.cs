@@ -19,6 +19,8 @@ namespace DSVProgram
             InitializeComponent();
         }
 
+        public bool SuccessfullyAuth = false;
+
         private void Auth_Load(object sender, EventArgs e)
         {
             textBoxLogin.Text = "admin";
@@ -46,13 +48,12 @@ namespace DSVProgram
 
                 if (AuthDATATABLE.Rows.Count > 0)
                 {
-                    Maintain addData = new Maintain();
-                    addData.Show();
-                    this.Hide();
+                    SuccessfullyAuth = true;
                 }
                 else
                 {
-                    MessageBox.Show("Неизвестная ошибка, возможно, этот пользователь несуществует", Text);
+                    SuccessfullyAuth = false;
+                    MessageBox.Show("Неизвестная ошибка", Text);
                     AuthCONNECTION.Close();
                 }
             }
