@@ -2,13 +2,11 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DistEkzamen_test
 {
     public partial class Admin : Form
     {
-        public DataTable dt = new DataTable();
         public Admin()
         {
             InitializeComponent();
@@ -16,6 +14,18 @@ namespace DistEkzamen_test
 
         private void emloyees_Click(object sender, EventArgs e)
         {
+            switch (this.label1.Text)
+            {
+                case "Заказы":
+                    orders_flush();
+                    break;
+                case "Сотрудники":
+                    empolyees_flush();
+                    break;
+                case "Смены":
+                    shifts_flush();
+                    break;
+            }
             using (var connection = new NpgsqlConnection(config.connection))
             {
                 connection.Open();
@@ -24,18 +34,29 @@ namespace DistEkzamen_test
                 command.CommandText = "SELECT * FROM users";
                 command.Connection = connection;
 
-                dt.Clear();
-                dataGridView1.Update();
-
+                var dt = new DataTable();
                 dt.Load(command.ExecuteReader());
-                this.dataGridView1.DataSource = dt;
-
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
+                
                 connection.Close();
             }
+            label1.Text = "Сотрудники";
         }
-
         private void shifts_Click(object sender, EventArgs e)
         {
+            switch (this.label1.Text)
+            {
+                case "Заказы":
+                    orders_flush();
+                    break;
+                case "Сотрудники":
+                    empolyees_flush();
+                    break;
+                case "Смены":
+                    shifts_flush();
+                    break;
+            }
             using (var connection = new NpgsqlConnection(config.connection))
             {
                 connection.Open();
@@ -44,18 +65,29 @@ namespace DistEkzamen_test
                 command.CommandText = "SELECT * FROM shifts";
                 command.Connection = connection;
 
-                dt.Clear();
-                dataGridView1.Update();
-
+                var dt = new DataTable();
                 dt.Load(command.ExecuteReader());
-                this.dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
 
                 connection.Close();
             }
+            label1.Text = "Смены";
         }
-
         private void orders_Click(object sender, EventArgs e)
         {
+            switch (this.label1.Text)
+            {
+                case "Заказы":
+                    orders_flush();
+                    break;
+                case "Сотрудники":
+                    empolyees_flush();
+                    break;
+                case "Смены":
+                    shifts_flush();
+                    break;
+            }
             using (var connection = new NpgsqlConnection(config.connection))
             {
                 connection.Open();
@@ -64,16 +96,15 @@ namespace DistEkzamen_test
                 command.CommandText = "SELECT * FROM orders";
                 command.Connection = connection;
 
-                dt.Clear();
-                dataGridView1.Update();
-
+                var dt = new DataTable();
                 dt.Load(command.ExecuteReader());
-                this.dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
 
                 connection.Close();
             }
+            label1.Text = "Заказы";
         }
-
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             switch (this.label1.Text) 
@@ -91,7 +122,6 @@ namespace DistEkzamen_test
 
             Environment.Exit(0);
         }
-
         private void empolyees_flush()
         {
             string password;
@@ -119,10 +149,10 @@ namespace DistEkzamen_test
                     id = row.Cells[4].Value.ToString();
                     status = row.Cells[5].Value.ToString();
 
-                    command.CommandText =  "INSERT INTO orders(id,password,login,name,job,status)" +
-                                          $" VALUES({id},'{password}','{login}','{name}','{job}','{status}')" +
+                    command.CommandText =  "INSERT INTO users(id,login,password,name,job,job_status)" +
+                                          $" VALUES({id},'{login}','{password}','{name}','{job}','{status}')" +
                                            " ON CONFLICT (id) DO UPDATE SET" +
-                                          $" id = {id}, time_start = '{password}', time_end = '{login}', employees = '{name}', job = '{job}', status = '{status}';";
+                                          $" id = {id}, login = '{login}', password = '{password}', name = '{name}', job = '{job}', job_status = '{status}';";
 
                     command.ExecuteNonQuery();
                 }
@@ -196,11 +226,10 @@ namespace DistEkzamen_test
                 command.CommandText = "SELECT * FROM orders";
                 command.Connection = connection;
 
-                dt.Clear();
-                this.dataGridView1.DataSource = dt;
-
+                var dt = new DataTable();
                 dt.Load(command.ExecuteReader());
-                this.dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
 
                 connection.Close();
             }
